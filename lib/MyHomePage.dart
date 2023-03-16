@@ -8,6 +8,18 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+class Ecranlist extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("To Do List App"),
+      ),
+      backgroundColor: Colors.purple
+    );
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context){
@@ -18,13 +30,20 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Colors.deepPurple.shade300,
         animationDuration: Duration(milliseconds: 300),
         onTap: (index){
-
-        print(index);
+          showDialog(
+            context: context,
+            builder: (context)=>AlertDialog(
+              title: Text('My title'),
+              content: Text(
+                  'aled'
+              ),
+            ),
+          );
         },
         items: [
           Icon(Icons.home, size: 30, color: Colors.white),
           Icon(Icons.add, size: 30, color: Colors.black),
-          Icon(Icons.settings, size: 30, color: Colors.white),
+          Icon(Icons.settings, size: 30, color: Colors.white,),
         ],
       ),
     );
